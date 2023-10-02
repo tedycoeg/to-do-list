@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: linear-gradient(to right bottom, #153677, #4e085f);
+}
+
+.app-todo {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  padding: 40px 30px 70px;
+  margin: 100px auto;
+  border-radius: 20px;
+}
+
+.heading-todo {
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  margin-bottom: 25px;
+  background: linear-gradient(to right bottom, #153677, #4e085f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bounce infinite 2s;
+}
+
+.heading-todo i {
+  margin-left: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #edeef0;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.row input {
+  flex: 1;
+  outline: none;
+  padding: 12px 10px 12px 10px;
+
+  border: none;
+  background: transparent;
+}
+.row button {
+  color: white;
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(233, 155, 10);
+  width: 120px;
+}
+
+ul li {
+  padding: 22px 10px 22px 70px;
+  list-style: none;
+  font-size: 17px;
+  font-weight: 600;
+  user-select: none;
+  position: relative;
+  line-height: 12px;
+}
+
+ul li::before {
+  position: absolute;
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: url("./unchecked.png");
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 20px;
+  cursor: pointer;
+}
+
+ul li.list-children {
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.list-children::before {
+  background: url("./checked.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+ul li button {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  line-height: 14px;
+  border: none;
+  background-image: linear-gradient(to right bottom, #153677, #4e085f);
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+ul li button:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px 0 rgb(121, 116, 116);
+  background: white;
+  color: #555;
+}
